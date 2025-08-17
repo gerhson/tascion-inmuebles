@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tasación Online — Cuneo & Asociados</title>
+  <meta name="description" content="Calcula el valor real de tu propiedad. Informe profesional en menos de 24 hrs." />
+  <style>
+    :root{--accent:#0f766e;--accent-dark:#0b5f57;--bg:#f7faf9;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#0f172a}
+    .container{max-width:960px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    h1{margin:0;font-size:24px}
+    p.lead{margin:6px 0 18px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    label{display:block;font-weight:600;margin-bottom:6px;font-size:14px}
+    input[type=text],input[type=email],input[type=number],select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef0;font-size:14px}
+    .row{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .file-note{font-size:13px;color:var(--muted);margin-top:6px}
+    button.cta{background:var(--accent);color:#fff;border:none;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+    .muted{color:var(--muted);font-size:14px}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+    .trust{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .trust span{background:#eef7f6;padding:8px 10px;border-radius:8px;font-weight:600;color:var(--accent-dark)}
+    @media(min-width:820px){.grid{grid-template-columns:1fr 420px}.row{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">C</div>
+      <div>
+        <h1>Descubre el valor real de tu propiedad en minutos</h1>
+        <p class="lead">Tasación profesional y rápida. Informe PDF y seguimiento personalizado por WhatsApp en menos de 24 horas.</p>
+        <div class="trust">
+          <span>12+ años</span>
+          <span>Agente MVCS</span>
+          <span>Reportes profesionales</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid" style="margin-top:20px">
+      <!-- LEFT: Info + benefits + example -->
+      <section class="card">
+        <h2 style="margin-top:0">¿Cómo funciona?</h2>
+        <ol>
+          <li style="margin-bottom:8px">Completa el formulario con los datos de tu propiedad.</li>
+          <li style="margin-bottom:8px">Analizamos ubicación, comparables y estado del inmueble.</li>
+          <li style="margin-bottom:8px">Recibes un informe profesional en PDF por email y WhatsApp.</li>
+        </ol>
+
+        <h3 style="margin-bottom:8px">Beneficios</h3>
+        <ul>
+          <li>Informe claro con rango de valor (inferior / promedio / superior).</li>
+          <li>Asesoría para definir precio de venta o inversión.</li>
+          <li>Plantilla lista para presentar a bancos o compradores.</li>
+        </ul>
+
+        <div style="margin-top:14px">
+          <h3 style="margin:0 0 8px 0">Ejemplo rápido</h3>
+          <div style="background:#fafafa;padding:12px;border-radius:10px">
+            <div style="font-weight:700">Área: <span class="muted">75 m²</span></div>
+            <div>Precio promedio estimado: <strong>USD 89,167</strong></div>
+            <div class="muted">Rango: USD 67,000 — USD 116,554</div>
+          </div>
+        </div>
+
+        <hr style="margin:18px 0;border:none;border-top:1px solid #eef3f4">
+        <p class="muted" style="margin:0">Pro tip: incluye fotos y aproximado del año de construcción para un informe más exacto.</p>
+      </section>
+
+      <!-- RIGHT: Form -->
+      <aside class="card">
+        <form id="tasacionForm">
+          <h2 style="margin-top:0">Solicita tu tasación gratis</h2>
+
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" name="nombre" type="text" required placeholder="Ej: Juan Pérez" />
+
+          <label for="telefono">Teléfono / WhatsApp</label>
+          <input id="telefono" name="telefono" type="text" required placeholder="9xx xxx xxx" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="tunombre@mail.com" />
+
+          <label for="direccion">Dirección del inmueble</label>
+          <input id="direccion" name="direccion" type="text" required placeholder="Calle, distrito" />
+
+          <div class="row" style="margin-top:10px">
+            <div>
+              <label for="tipo">Tipo de propiedad</label>
+              <select id="tipo" name="tipo">
+                <option>Departamento</option>
+                <option>Casa</option>
+                <option>Terreno</option>
+                <option>Local</option>
+              </select>
+            </div>
+            <div>
+              <label for="area">Área (m²)</label>
+              <input id="area" name="area" type="number" min="1" required placeholder="Ej: 75" />
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:10px">
+            <div>
+              <label for="antiguedad">Antigüedad (años)</label>
+              <input id="antiguedad" name="antiguedad" type="number" min="0" placeholder="Opcional" />
+            </div>
+            <div>
+              <label for="precioref">Precio referencial (si lo sabe)</label>
+              <input id="precioref" name="precioref" type="number" step="0.01" placeholder="USD" />
+            </div>
+          </div>
+
+          <label for="fotos" style="margin-top:10px">Fotos (opcional)</label>
+          <input id="fotos" name="fotos" type="file" accept="image/*" multiple />
+          <div class="file-note">Nota: si tu hosting no acepta subida, puedes enviar fotos por WhatsApp luego.</div>
+
+          <label for="mensaje" style="margin-top:10px">Comentarios</label>
+          <textarea id="mensaje" name="mensaje" rows="3" placeholder="Detalles que quieras agregar"></textarea>
+
+          <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+            <button type="submit" class="cta">📩 Solicitar Tasación</button>
+            <div style="font-size:13px;color:var(--muted)">Sin compromiso · Respuesta en 24 hrs</div>
+          </div>
+
+          <p style="font-size:12px;color:var(--muted);margin-top:12px">Al enviar aceptas que contactemos vía WhatsApp y correo para procesar tu solicitud. Tratamos datos conforme a la ley.</p>
+        </form>
+
+        <div id="msg" style="margin-top:12px;color:var(--accent-dark);font-weight:700;display:none">Enviando…</div>
+
+        <script>
+          // CONFIG: reemplaza con tu endpoint de Formspree o webhook si lo tienes
+          const WEBHOOK_URL = ""; // ejemplo: https://formspree.io/f/xxxxx
+
+          const form = document.getElementById('tasacionForm');
+          const msg = document.getElementById('msg');
+
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            msg.style.display = 'block'; msg.textContent = 'Enviando…';
+
+            const data = new FormData(form);
+            // agrega info extra
+            data.append('source','Landing Tasacion — Cuneo');
+
+            try{
+              if (WEBHOOK_URL){
+                // envia a tu webhook (Formspree, Zapier, Make, etc.)
+                await fetch(WEBHOOK_URL, {method:'POST',body:data});
+                msg.textContent = 'Gracias — tu solicitud fue recibida. Te contacto en menos de 24 hrs.';
+              } else {
+                // FALLBACK: crea mailto con resumen (no sube fotos)
+                const nombre = data.get('nombre') || '';
+                const telefono = data.get('telefono') || '';
+                const email = data.get('email') || '';
+                const direccion = data.get('direccion') || '';
+                const tipo = data.get('tipo') || '';
+                const area = data.get('area') || '';
+                const antig = data.get('antiguedad') || '';
+                const precioref = data.get('precioref') || '';
+                const mensaje = data.get('mensaje') || '';
+
+                const subject = encodeURIComponent('Nueva solicitud de tasación — ' + nombre);
+                const body = encodeURIComponent(
+                  `Nombre: ${nombre}\nTeléfono: ${telefono}\nEmail: ${email}\nDirección: ${direccion}\nTipo: ${tipo}\nÁrea: ${area} m²\nAntigüedad: ${antig} años\nPrecio ref: ${precioref}\nMensaje: ${mensaje}\n(Envía fotos por WhatsApp si es necesario)`
+                );
+
+                const mailto = 'mailto:tuemail@tudominio.com?subject=' + subject + '&body=' + body;
+                window.location.href = mailto;
+                msg.textContent = 'Se abrió tu cliente de correo. Si no se envía, configura WEBHOOK_URL.';
+              }
+            }catch(err){
+              console.error(err);
+              msg.textContent = 'Ocurrió un error al enviar. Prueba de nuevo o usa WhatsApp.';
+            }
+
+            setTimeout(()=>{msg.style.display='none'},7000);
+          });
+        </script>
+
+      </aside>
+    </main>
+
+    <footer>
+      <p>© Cuneo & Asociados Real Estate · Tasaciones profesionales · Código MVCS: [tu código]</p>
+    </footer>
+  </div>
+</body>
+</html>
